@@ -1,0 +1,102 @@
+{
+  "departments": [
+    {
+      "id": "1",
+      "name": "Integrated System"
+    },
+    {
+      "id": "2",
+      "name": "Software"
+    },
+    {
+      "id": "3",
+      "name": "Information Assurance"
+    }
+  ],
+  "projects": [
+    {
+      "id": "1",
+      "name": "Secure Comments Portal",
+      "description": "Demo about XSS and sanitization in project comment flow.",
+      "department": 3
+    },
+    {
+      "id": "2",
+      "name": "Safe Transaction App",
+      "description": "Demo about CSRF token validation and cookie policy.",
+      "department": 2
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "projectId": 1,
+      "author": "student-a",
+      "rawContent": "<b>Hello team</b>",
+      "sanitizedContent": "&lt;b&gt;Hello team&lt;/b&gt;"
+    },
+    {
+      "id": "46ce",
+      "projectId": 1,
+      "author": "student-demo",
+      "rawContent": "<img src=x onerror=\"alert(`XSS`)\"><b>Hello</b>",
+      "sanitizedContent": "&lt;img src=x onerror=&quot;alert(`XSS`)&quot;&gt;&lt;b&gt;Hello&lt;/b&gt;"
+    },
+    {
+      "id": 1776916175642,
+      "projectId": 1,
+      "author": "abc",
+      "rawContent": "<img src=x onerror=\"alert(`XSS`)\"><b>Hello</b>",
+      "sanitizedContent": "&lt;img src=x onerror=&quot;alert(`XSS`)&quot;&gt;&lt;b&gt;Hello&lt;/b&gt;"
+    },
+    {
+      "id": 1776917509583,
+      "projectId": 1,
+      "author": "student-demo",
+      "rawContent": "<img src=x onerror=\"alert(`XSS`)\"><b>Hello</b>",
+      "sanitizedContent": "&lt;img src=x onerror=&quot;alert(`XSS`)&quot;&gt;&lt;b&gt;Hello&lt;/b&gt;"
+    },
+    {
+      "id": 1776918384619,
+      "projectId": 1,
+      "author": "<img src=x onerror=\"alert('XSS!')\">",
+      "rawContent": "<img src=x onerror=\"alert(`XSS`)\"><b>Hello</b>",
+      "sanitizedContent": "&lt;img src=x onerror=&quot;alert(`XSS`)&quot;&gt;&lt;b&gt;Hello&lt;/b&gt;"
+    },
+    {
+      "id": 1776918402488,
+      "projectId": 1,
+      "author": "<img src=x onerror=\"alert('XSS!')\">",
+      "rawContent": "5555555555555",
+      "sanitizedContent": "5555555555555"
+    },
+    {
+      "id": 1776919735408,
+      "projectId": 1,
+      "author": "student-demo",
+      "rawContent": "<img src=x onerror=\"alert(`XSS`)\"><b>Hello</b>",
+      "sanitizedContent": "&lt;img src=x onerror=&quot;alert(`XSS`)&quot;&gt;&lt;b&gt;Hello&lt;/b&gt;"
+    },
+    {
+      "id": 1776919944119,
+      "projectId": 1,
+      "author": "student-demo",
+      "rawContent": "<img src=x onerror=\"alert(`XSS`)\"><b>Hello</b>",
+      "sanitizedContent": "&lt;img src=x onerror=&quot;alert(`XSS`)&quot;&gt;&lt;b&gt;Hello&lt;/b&gt;"
+    }
+  ],
+  "csrfMeta": [
+    {
+      "id": "1",
+      "token": "csrf-demo-token-2026",
+      "cookiePolicy": "SameSite=Strict; Secure; HttpOnly"
+    }
+  ],
+  "authMeta": [
+    {
+      "id": "1",
+      "jwtPolicy": "RS256 only, validate exp/iss/aud, short access token, refresh token rotation",
+      "oauthPolicy": "Authorization Code + PKCE + strict redirect_uri + state parameter"
+    }
+  ]
+}
